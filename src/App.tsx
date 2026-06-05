@@ -20,20 +20,25 @@ export default function App() {
           
           {/* Logo & Architect Name */}
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold shadow-md shadow-indigo-600/10">
-              LR
+            <div className="h-11 w-11 rounded-xl bg-white p-1 flex items-center justify-center shadow-xs border border-slate-200 shrink-0">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Logo_Universidad_de_San_Andr%C3%A9s.svg"
+                alt="Escudo Universidad de San Andrés"
+                className="h-full w-full object-contain"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-sm font-sans font-extrabold text-slate-900 uppercase tracking-wider">
-                  Campus Laundry Engine
+                <h1 className="text-sm font-sans font-black text-slate-900 uppercase tracking-tight">
+                  UdeSA DORMIS • Laundry Engine
                 </h1>
                 <span className="text-[9px] font-mono font-bold bg-indigo-50 text-indigo-700 px-1.5 py-0.5 rounded border border-indigo-150">
                   v1.4
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 font-mono">
-                Por: Lucia Candel C. • Senior Fullstack Architect
+                Por: Lucia Candel C. • Senior Fullstack Architect • Residencia Universitaria UdeSA
               </p>
             </div>
           </div>

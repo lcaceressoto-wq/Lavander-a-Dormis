@@ -782,28 +782,56 @@ export default function SimulatorTab() {
           {/* Smartphone screen contents */}
           <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-slate-950 flex flex-col justify-between">
             <div>
+              {/* Smartphone Global App Header */}
+              {currentUser && (
+                <div className="flex items-center gap-2 pb-3 mb-2 border-b border-slate-905 border-slate-900">
+                  <div className="h-7 w-7 rounded bg-white p-0.5 flex items-center justify-center shrink-0 shadow-2xs">
+                    <img 
+                      src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Logo_Universidad_de_San_Andr%C3%A9s.svg"
+                      alt="UdeSA Logo"
+                      className="h-full object-contain"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] uppercase tracking-wider font-extrabold text-white leading-none">UdeSA DORMIS</p>
+                    <p className="text-[8px] text-indigo-400 font-mono mt-0.5 leading-none font-semibold">Residencia Universitaria</p>
+                  </div>
+                </div>
+              )}
+
               {/* IF USER NOT LOGGED IN */}
               {!currentUser ? (
-                <div className="space-y-4 pt-12 animate-fade-in">
-                  <div className="text-center space-y-2">
-                    <div className="mx-auto w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400">
-                      <Lock size={22} />
+                <div className="space-y-4 pt-6 animate-fade-in">
+                  <div className="text-center space-y-3">
+                    <div className="mx-auto w-16 h-16 rounded-xl bg-white p-2 flex items-center justify-center shadow-lg border border-slate-800">
+                      <img 
+                        src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Logo_Universidad_de_San_Andr%C3%A9s.svg"
+                        alt="Escudo Universidad de San Andrés"
+                        className="w-full h-full object-contain"
+                        referrerPolicy="no-referrer"
+                      />
                     </div>
-                    <h4 className="text-base font-bold text-white font-sans">Lavandería Residencia</h4>
-                    <p className="text-xs text-slate-400">Ingreso exclusivo para emails registrados (Whitelist)</p>
+                    <div>
+                      <h4 className="text-base font-black text-white font-sans tracking-tight uppercase">UDESA DORMIS</h4>
+                      <p className="text-[10px] font-mono text-indigo-400 uppercase font-bold tracking-wider mt-0.5">Residencia Universitaria</p>
+                      <p className="text-[11px] text-slate-400 mt-1 max-w-xs mx-auto leading-normal">
+                        Control de Lavandería Inteligente
+                      </p>
+                    </div>
                   </div>
 
                   <form onSubmit={handleLogin} className="space-y-3 pt-2">
                     <div>
                       <label className="text-[10px] font-mono text-slate-400 uppercase font-semibold block mb-1">
-                        Email Institucional
+                        Email Institucional (@udesa.edu.ar)
                       </label>
                       <input 
                         type="email"
                         id="input-login-email"
                         value={loginEmailInput}
                         onChange={(e) => setLoginEmailInput(e.target.value)}
-                        placeholder="tu-cuenta@residencia.un.edu"
+                        placeholder="tu-cuenta@udesa.edu.ar"
                         className="w-full text-xs bg-slate-900 border border-slate-800 rounded-lg p-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
                         required
                       />
@@ -826,10 +854,10 @@ export default function SimulatorTab() {
                   </form>
 
                   <div className="pt-2 border-t border-slate-900 text-[10px] text-slate-500 space-y-1.5">
-                    <p className="font-bold uppercase text-slate-400 font-mono">Whitelisted Emails:</p>
-                    <p>• <span className="text-slate-400">luciacandelacaceres09@gmail.com</span> (Estudiante)</p>
-                    <p>• <span className="text-slate-400">blocked.student@un.edu</span> (Estudiante bloqueada)</p>
-                    <p>• <span className="text-slate-400">tutor.adm@residencia.un.edu</span> (Tutor)</p>
+                    <p className="font-bold uppercase text-slate-450 text-slate-400 font-mono">Emails de Prueba (Whitelist):</p>
+                    <p>• <span className="text-slate-400 font-semibold text-indigo-350">luciacandelacaceres09@gmail.com</span> (Estudiante)</p>
+                    <p>• <span className="text-slate-500">• </span><span className="text-slate-400">blocked.student@un.edu</span> (Estudiante bloqueada)</p>
+                    <p>• <span className="text-slate-500">• </span><span className="text-slate-400">tutor.adm@residencia.un.edu</span> (Tutor)</p>
                   </div>
                 </div>
               ) : currentUser.role === "STUDENT" ? (
