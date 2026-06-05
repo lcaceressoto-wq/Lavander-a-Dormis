@@ -1,0 +1,6 @@
+{
+  "name": "Gestión de Lavandería Universitaria",
+  "description": "Arquitectura técnica, diseño de base de datos y simulador interactivo para la gestión de turnos, códigos QR y lógica de simultaneidad del lavadero de una residencia universitaria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
